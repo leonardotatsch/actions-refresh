@@ -5,9 +5,8 @@ on:
 jobs:
   iac_test:
     steps:
-      - name: Terraform Plan
-        uses: leonardotatsch/pipeline-templates/.github/workflows/terraform-plan.yml@main
-        with: 
-          terraform_version: '1.3.3'
-          infracost_enabled: false
-          working-directory: ${{ env.working-directory }}
+        - uses: leonardotatsch/pipeline-templates/.github/workflows/terraform-plan.yml@main
+          with: 
+            terraform_version: '1.3.3'
+            infracost_enabled: false
+            working-directory: ${{ env.working-directory }}
