@@ -4,7 +4,6 @@ on:
 jobs:
   iac_test:
     - uses: leonardotatsch/pipeline-templates/.github/workflows/terraform-plan.yml@main
-    
       with: 
         terraform_version: '1.3.3'
         infracost_enabled: false
