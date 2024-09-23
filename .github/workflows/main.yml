@@ -2,5 +2,5 @@ on:
   workflow_dispatch:
 
 jobs:
-  iac_test:
+  build:
     uses: leonardotatsch/pipeline-templates/.github/workflows/terraform-plan.yml@main
