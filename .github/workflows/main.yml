@@ -13,8 +13,10 @@ jobs:
       container_name: "terraform"
       tf_file_name: "azaccelerator.tfstate"
       resource_group_name: "rg-ltatschc"
+      environment: "sandbox"
+    secrets:
       subscription_id: "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
       tenant_id: "${{ secrets.AZURE_TENANT_ID }}"
       client_id: "${{ secrets.AZURE_CLIENT_ID }}"
       client_secret: "${{ secrets.AZURE_CLIENT_SECRET }}"
-      environment: "sandbox"
+    #secrets: inherit
