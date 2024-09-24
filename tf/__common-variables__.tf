@@ -24,6 +24,7 @@ variable "LOCATION_SHARED" {
 locals {
 
   global_tags = {
+    CreatedBy     = "IaC Pipelines"
     BusinessOwner = "CHANGEME" #var.BUSINESSOWNER_TAG
     Environment   = "SANDBOX" #var.ENVIRONMENT
     ServiceModel  = "Managed by CHANGEME" #var.SERVICEMODEL
