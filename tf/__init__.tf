@@ -12,5 +12,6 @@ terraform {
     storage_account_name = "saiacltatschc"
     container_name       = "terraform"
     key                  = "azaccelerator.tfstate"
+    subscription_id      = "bfd17bfe-75bc-40d0-bac1-3cbc8b5a3ae5"
   }
 }
