@@ -3,9 +3,6 @@ name: IaC test
 on:
   workflow_dispatch:
 
-env:
-  TF_VAR_ENVIRONMENT: ${{ vars.TF_VAR_ENVIRONMENT }}
-
 jobs:
   build:
     uses: leonardotatsch/pipeline-templates/.github/workflows/terraform-plan.yml@main
