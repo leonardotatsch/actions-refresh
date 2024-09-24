@@ -5,20 +5,26 @@ variable "PROJECT_NAME" {
 
 variable "LOCATION_EU" {
   type        = string
-  description = "(Required) The name of the resource group location"
+  description = "The name of the resource group location"
   default     = "westeurope"
 }
 
 variable "LOCATION_US" {
   type        = string
-  description = "(Required) The name of the resource group location"
+  description = "The name of the resource group location"
   default     = "centralus"
 }
 
 variable "LOCATION_SHARED" {
   type        = string
-  description = "(Required) The name of the resource group location"
+  description = "The name of the resource group location"
   default     = "westeurope"
+}
+
+variable "ENVIRONMENT" {
+  type        = string
+  description = "(Required) The name of the environment"
+  default     = "dev"
 }
 
 locals {
@@ -26,7 +32,7 @@ locals {
   global_tags = {
     CreatedBy     = "IaC Pipelines"
     BusinessOwner = "CHANGEME" #var.BUSINESSOWNER_TAG
-    Environment   = "SANDBOX" #var.ENVIRONMENT
+    Environment   = var.ENVIRONMENT
     ServiceModel  = "Managed by CHANGEME" #var.SERVICEMODEL
   }
 }
