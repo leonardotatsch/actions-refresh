@@ -5,7 +5,7 @@ on:
 
 jobs:
   build:
-    - uses: leonardotatsch/pipeline-templates/.github/workflows/terraform-plan.yml@main
-      with:
-        working-directory: "./tf"
+    uses: leonardotatsch/pipeline-templates/.github/workflows/terraform-plan.yml@main
+    with:
+      working-directory: "./tf"
 
