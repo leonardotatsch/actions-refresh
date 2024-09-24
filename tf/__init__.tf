@@ -7,10 +7,5 @@ terraform {
       version = "3.4.3"
     }
   }
-  backend "azurerm" {
-    resource_group_name  = "rg-ltatschc"
-    storage_account_name = "saiacltatschc"
-    container_name       = "terraform"
-    key                  = "azaccelerator.tfstate"
-  }
+  backend "azurerm" {}
 }
