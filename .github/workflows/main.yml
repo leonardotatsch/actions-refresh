@@ -8,4 +8,5 @@ jobs:
     uses: leonardotatsch/pipeline-templates/.github/workflows/terraform-plan.yml@main
     with:
       working-directory: "./tf"
+      terraform-version: "1.3.3"
 
