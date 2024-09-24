@@ -5,7 +5,6 @@ on:
 
 jobs:
   build:
-    environment: sandbox
     uses: leonardotatsch/pipeline-templates/.github/workflows/terraform-plan.yml@main
     with:
       working-directory: "./tf"
@@ -18,5 +17,6 @@ jobs:
       tenant_id: ${{ secrets.AZURE_TENANT_ID }}
       client_id: ${{ secrets.AZURE_CLIENT_ID }}
       client_secret: ${{ secrets.AZURE_CLIENT_SECRET }}
+      environment: "sandbox"
 
 
