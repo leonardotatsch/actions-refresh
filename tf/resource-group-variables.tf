@@ -1,3 +1,8 @@
+variable "RG_ENABLED" {
+  type        = bool
+  description = "Enable the resource group creation"
+  default     = true
+}
 locals {
   rg_region1 = {
     name = upper("rg-${var.PROJECT_NAME}-we-rg01")
