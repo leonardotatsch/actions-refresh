@@ -1,6 +1,6 @@
 module "vnet_spoke" {
   source   = "../tf-modules/networking/vnet"
-  for_each = local.vnet_spoke
+  for_each = toset(local.vnet_spoke)
 
   VNET_ENABLED  = each.value.enabled
   NAME          = each.value.name

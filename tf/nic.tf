@@ -1,6 +1,6 @@
 module "nic_spoke" {
   source   = "../tf-modules/networking/network-interface"
-  for_each = local.nic_spoke
+  for_each = toset(local.nic_spoke)
 
   NETW_INTERFACE_ENABLED       = each.value.enabled
   NAME                         = each.value.name
