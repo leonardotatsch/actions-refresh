@@ -1,8 +1,10 @@
-module "resource_group_region1" {
-  source = "../tf-modules/resource-group"
+# Terraform module to create resource groups based on the locals using for_each
+module "spoke_rg" {
+  source   = "../../tf-modules/resource-group"
+  for_each = local.rg_spoke
 
-  ENABLED  = var.RG_ENABLED
-  NAME     = local.rg_region1.name
-  LOCATION = var.LOCATION_EU
-  TAGS     = merge(local.global_tags, local.rg_region1.tags)
+  ENABLED  = each.value.enabled
+  NAME     = each.value.name
+  LOCATION = each.value.location
+  TAGS     = merge(local.global_tags, each.value.tags)
 }

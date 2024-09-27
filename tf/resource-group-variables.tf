@@ -4,11 +4,24 @@ variable "RG_ENABLED" {
   default     = true
 }
 locals {
-  rg_region1 = {
-    name = upper("rg-${var.PROJECT_NAME}-we-rg01")
-    tags = {
-      hidden-title = "Test Resource Group"
-      Description  = "Resource group used for testing"
+  rg_spoke = [
+    {
+      name     = upper("rg-${var.PROJECT_NAME}-spoke1-rg01")
+      location = var.LOCATION_EU
+      enabled  = var.RG_ENABLED
+      tags = {
+        hidden-title = "Spoke 1 Resource Group"
+        Description  = "Resource group used for Spoke 1"
+      }
+    },
+    {
+      name     = upper("rg-${var.PROJECT_NAME}-spoke2-rg01")
+      location = var.LOCATION_US
+      enabled  = var.RG_ENABLED
+      tags = {
+        hidden-title = "Spoke 2 Resource Group"
+        Description  = "Resource group used for Spoke 2"
+      }
     }
-  }
+  ]
 }

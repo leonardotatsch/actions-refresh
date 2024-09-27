@@ -1,5 +1,5 @@
 variable "PROJECT_NAME" {
-  type = string
+  type    = string
   default = "ACCELERATOR"
 }
 
@@ -24,15 +24,15 @@ variable "LOCATION_SHARED" {
 variable "ENVIRONMENT" {
   type        = string
   description = "(Required) The name of the environment"
-  default     = "dev"
+  default     = "sandbox"
 }
 
 locals {
 
   global_tags = {
     CreatedBy     = "IaC Pipelines"
-    BusinessOwner = "CHANGEME" #var.BUSINESSOWNER_TAG
-    Environment   = var.ENVIRONMENT
-    ServiceModel  = "Managed by CHANGEME" #var.SERVICEMODEL
+    BusinessOwner = "POC"            #var.BUSINESSOWNER_TAG
+    Environment   = "SANDBOX"            #var.ENVIRONMENT
+    ServiceModel  = "Managed by POC" #var.SERVICEMODEL
   }
 }
