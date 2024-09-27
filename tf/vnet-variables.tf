@@ -9,7 +9,7 @@ locals {
       enabled            = var.VNET_ENABLED
       rg_name            = module.rg_spoke[0].name
       location           = module.rg_spoke[0].location
-      vnet_address_space = "10.100.1.0/24"
+      vnet_address_space = ["10.100.1.0/24"]
       tags = {
         hidden-title = "Spoke1 VNET"
         Description  = "VNET used for Spoke 1"
@@ -20,7 +20,7 @@ locals {
       enabled            = var.VNET_ENABLED
       rg_name            = module.rg_spoke[1].name
       location           = module.rg_spoke[1].location
-      vnet_address_space = "10.100.2.0/24"
+      vnet_address_space = ["10.100.2.0/24"]
       tags = {
         hidden-title = "Spoke2 VNET"
         Description  = "VNET used for Spoke 2"
