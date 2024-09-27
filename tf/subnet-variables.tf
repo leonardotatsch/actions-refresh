@@ -15,10 +15,6 @@ locals {
       delegation_name              = ""
       delegation_service_name      = ""
       delegation_service_actions   = []
-      tags = {
-        hidden-title = "Spoke1 Subnet"
-        Description  = "Spoke1 Subnet used for the ${module.vnet_spoke[0].name} VNet"
-      }
     },
     {
       enabled                      = var.SNET_ENABLED
@@ -31,10 +27,6 @@ locals {
       delegation_name              = ""
       delegation_service_name      = ""
       delegation_service_actions   = []
-      tags = {
-        hidden-title = "Spoke2 Subnet"
-        Description  = "Spoke2 Subnet used for the ${module.vnet_spoke[1].name} VNet"
-      }
     }
   ]
 }

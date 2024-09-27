@@ -13,5 +13,4 @@ module "subnet_spoke" {
   DELEGATION_NAME              = each.value.delegation_name
   DELEGATION_SERVICE_NAME      = each.value.delegation_service_name
   DELEGATION_SERVICE_ACTIONS   = each.value.delegation_service_actions
-  TAGS                         = merge(local.global_tags, each.value.tags)
 }
