@@ -3,7 +3,7 @@ variable "SNET_ENABLED" {
   default = true
 }
 locals {
-  snet_spoke = [
+  subnet_spoke = [
     {
       enabled                      = var.SNET_ENABLED
       resource_group_name          = module.rg_spoke[0].name

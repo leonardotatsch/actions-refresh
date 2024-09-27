@@ -1,11 +1,11 @@
 module "vnet_spoke" {
   source   = "../tf-modules/networking/vnet"
-  for_each = toset(local.vnet_spoke)
+  count = length(local.vnet_spoke)
 
-  VNET_ENABLED  = each.value.enabled
-  NAME          = each.value.name
-  LOCATION      = each.value.location
-  RG_NAME       = each.value.rg_name
-  VNET_ADDRESS_SPACE = each.value.vnet_address_space
-  TAGS          = merge(local.global_tags, each.value.tags)
+  VNET_ENABLED  = local.vnet_spoke[count.index].enabled
+  NAME          = local.vnet_spoke[count.index].name
+  LOCATION      = local.vnet_spoke[count.index].location
+  RG_NAME       = local.vnet_spoke[count.index].rg_name
+  VNET_ADDRESS_SPACE = local.vnet_spoke[count.index].vnet_address_space
+  TAGS          = merge(local.global_tags, local.vnet_spoke[count.index].tags)
 }
