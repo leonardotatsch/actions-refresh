@@ -9,7 +9,7 @@ locals {
       resource_group_name          = module.rg_spoke[0].name
       vnet_name                    = module.vnet_spoke[0].name
       subnet_address_space         = ["10.100.1.0/27"]
-      end_network_policies_enabled = "true"
+      private_endpoint_network_policies  = "Enabled"
       network_policies_enabled     = "true"
       service_endpoints            = []
       delegation_name              = ""
@@ -21,7 +21,7 @@ locals {
       resource_group_name          = module.rg_spoke[1].name
       vnet_name                    = module.vnet_spoke[1].name
       subnet_address_space         = ["10.100.2.0/27"]
-      end_network_policies_enabled = "true"
+      private_endpoint_network_policies  = "Enabled"
       network_policies_enabled     = "true"
       service_endpoints            = []
       delegation_name              = ""

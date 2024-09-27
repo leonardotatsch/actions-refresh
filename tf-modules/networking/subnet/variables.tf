@@ -20,9 +20,9 @@ variable "SUBNET_ADDRESS_SPACE" {
   type = list(string)
 }
 
-variable "END_NETWORK_POLICIES_ENABLED" {
+variable "PRIVATE_ENDPOINT_NETWORK_POLICIES" {
   type    = string
-  default = "true"
+  default = "Enabled"
 }
 
 variable "NETWORK_POLICIES_ENABLED" {
