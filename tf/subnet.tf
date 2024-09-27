@@ -3,7 +3,7 @@ module "subnet_spoke" {
   count = length(local.subnet_spoke)
 
   SNET_ENABLED                 = local.subnet_spoke[count.index].enabled
-  NAME                         = format("Subnet_%s", replace(local.subnet_spoke[count.index].subnet_address_space, "/", "_"))
+  NAME                         = format("Subnet_%s", replace(element(local.subnet_spoke[count.index].subnet_address_space, 0), "/", "_"))
   RG_NAME                      = local.subnet_spoke[count.index].resource_group_name
   VNET_NAME                    = local.subnet_spoke[count.index].vnet_name
   SUBNET_ADDRESS_SPACE         = local.subnet_spoke[count.index].subnet_address_space
