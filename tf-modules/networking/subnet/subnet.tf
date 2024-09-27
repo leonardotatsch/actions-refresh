@@ -1,5 +1,5 @@
 resource "azurerm_subnet" "subnet" {
-  count                                         = var.SNET_ENABLED == "true" ? 1 : 0
+  count                                         = var.SNET_ENABLED == true ? 1 : 0
   name                                          = var.NAME
   resource_group_name                           = var.RG_NAME
   virtual_network_name                          = var.VNET_NAME

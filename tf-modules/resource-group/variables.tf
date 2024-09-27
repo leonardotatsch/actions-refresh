@@ -13,6 +13,7 @@ variable "TAGS" {
   description = "Generic tags"
 }
 
-variable "ENABLED" {
-  type = string
+variable "RG_ENABLED" {
+  type = bool
+  default = true
 }
