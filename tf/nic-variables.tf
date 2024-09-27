@@ -8,10 +8,10 @@ locals {
     {
       name                         = upper("nic-${var.PROJECT_NAME}-spoke-01")
       enabled                      = var.NIC_ENABLED
-      location                     = module.spoke_rg.location
-      rg_name                      = module.spoke_rg.name
+      location                     = module.rg_spoke[0].location
+      rg_name                      = module.rg_spoke[0].name
       ip_config_name               = "ipconfig-${var.PROJECT_NAME}-spoke-01"
-      subnet_id                    = module.subnet_spoke.id
+      subnet_id                    = module.subnet_spoke[0].id
       private_ip_adress_allocation = "Dynamic"
       tags = {
         hidden-title = "spoke NIC"

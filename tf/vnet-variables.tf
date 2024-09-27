@@ -7,8 +7,8 @@ locals {
     {
       name               = lower("vnet-${var.PROJECT_NAME}-spoke1-01")
       enabled            = var.VNET_ENABLED
-      rg_name            = module.spoke_rg[0].name
-      location           = module.spoke_rg[0].location
+      rg_name            = module.rg_spoke[0].name
+      location           = module.rg_spoke[0].location
       vnet_address_space = "10.100.1.0/24"
       tags = {
         hidden-title = "Spoke1 VNET"
@@ -18,8 +18,8 @@ locals {
     {
       name               = lower("vnet-${var.PROJECT_NAME}-spoke2-01")
       enabled            = var.VNET_ENABLED
-      rg_name            = module.spoke_rg[1].name
-      location           = module.spoke_rg[1].location
+      rg_name            = module.rg_spoke[1].name
+      location           = module.rg_spoke[1].location
       vnet_address_space = "10.100.2.0/24"
       tags = {
         hidden-title = "Spoke2 VNET"
