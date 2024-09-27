@@ -1,5 +1,5 @@
 module "subnet_spoke" {
-  source   = "../../tf-modules/networking/subnet"
+  source   = "../tf-modules/networking/subnet"
   for_each = local.snet_spoke
 
   SNET_ENABLED                 = each.value.enabled

@@ -1,6 +1,6 @@
 # Terraform module to create resource groups based on the locals using for_each
 module "spoke_rg" {
-  source   = "../../tf-modules/resource-group"
+  source   = "../tf-modules/resource-group"
   for_each = local.rg_spoke
 
   ENABLED  = each.value.enabled
