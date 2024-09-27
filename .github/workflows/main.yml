@@ -15,7 +15,7 @@ jobs:
       resource_group_name: "rg-ltatschc"
       environment: "sandbox"
       tf_apply: false
-      tf_destroy: true
+      tf_destroy: false
       infracost_enabled: false #Needs to set INFRACOST_API_KEY secret when true
     secrets:
       AZURE_SUBSCRIPTION_ID: "${{ secrets.AZURE_SUBSCRIPTION_ID }}"
