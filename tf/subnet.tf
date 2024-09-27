@@ -1,6 +1,6 @@
 module "subnet_spoke" {
   source   = "../tf-modules/networking/subnet"
-  count = length(local.snet_spoke)
+  count = length(local.subnet_spoke)
 
   SNET_ENABLED                 = local.subnet_spoke[count.index].enabled
   NAME                         = format("Subnet_%s", replace(local.subnet_spoke[count.index].subnet_address_space, "/", "_"))
